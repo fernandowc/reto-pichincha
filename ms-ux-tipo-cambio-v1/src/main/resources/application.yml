@@ -1,0 +1,13 @@
+server:
+    port: 9091
+spring:
+    application:
+        name: ms-ux-tipo-cambio-v1
+
+api:
+    support:
+        base:
+            gorest:
+                url: https://gorest.co.in/
+            sp-tipo-cambio:
+                url: http://localhost:8080/
