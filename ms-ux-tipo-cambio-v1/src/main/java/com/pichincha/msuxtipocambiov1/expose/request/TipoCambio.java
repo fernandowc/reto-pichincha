@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @Builder
@@ -12,11 +13,12 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 public class TipoCambio {
-    private Long idUsuario;
-    private String usuaname;
-    private BigDecimal monto;
-    private String monedaOrigen;
+
+    private Long id;
+    private String monedaBase;
     private String monedaDestino;
-    private BigDecimal montoTipoCambio;
+    private BigDecimal tasaCambio;
+    private LocalDateTime fechaHora;
+    private String proveedor;
 
 }

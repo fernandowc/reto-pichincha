@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
@@ -38,7 +39,7 @@ public class TipoCambioServiceImpl implements TipoCambioService {
                     .monto(solicitudRequest.getMonto())
                     .monedaOrigen(solicitudRequest.getMonedaOrigen())
                     .monedaDestino(solicitudRequest.getMonedaDestino())
-                    .fechaProceso(solicitudRequest.getFechaProceso())
+                    .fechaProceso(LocalDateTime.now())
                     .build());
         });
 
@@ -72,5 +73,20 @@ public class TipoCambioServiceImpl implements TipoCambioService {
         });
 
         return usuarioEncontradoMono;
+    }
+
+    @Override
+    public Mono<TipoCambio> createTipoCambio(TipoCambio tipoCambio) {
+        return apiSuportTipoCambioWebClient.nuevoTipoCambio(tipoCambio);
+    }
+
+    @Override
+    public Flux<TipoCambio> listarTipoCambio() {
+        return apiSuportTipoCambioWebClient.listarTipoCambio();
+    }
+
+    @Override
+    public Flux<SolicitudResponse> verSolicitudes() {
+        return apiSuportTipoCambioWebClient.listarSolicitudes();
     }
 }

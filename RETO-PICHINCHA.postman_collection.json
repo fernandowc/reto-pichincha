@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "462ea152-c5ad-4dde-8584-cbf5285d93d7",
+		"name": "RETO-PICHINCHA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7970370"
+	},
+	"item": [
+		{
+			"name": "API UX",
+			"item": [
+				{
+					"name": "NuevaSolicitud UX",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"6897448\",\r\n    \"monto\" : \"10\",\r\n    \"monedaOrigen\": \"PEN\",\r\n    \"monedaDestino\" : \"USD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/api/v1/pichincha/solicitud",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1",
+								"pichincha",
+								"solicitud"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TipoCambio UX",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"monedaBase\" : \"PEN\",\r\n    \"monedaDestino\" : \"USD\",\r\n    \"tasaCambio\": \"0.27\",\r\n    \"fechaHora\" : \"2024-05-01T15:30:00.123456789\",\r\n    \"proveedor\" : \"proveedor\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/api/v1/pichincha/tipocambio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1",
+								"pichincha",
+								"tipocambio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll TipoCambio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/v1/pichincha/tipocambio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1",
+								"pichincha",
+								"tipocambio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get ALL Solicitud",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/v1/pichincha/solicitud",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1",
+								"pichincha",
+								"solicitud"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API SP",
+			"item": [
+				{
+					"name": "TipoCambio",
+					"item": [
+						{
+							"name": "TipoCambio",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"monedaBase\" : \"USD\",\r\n    \"monedaDestino\" : \"PEN\",\r\n    \"tasaCambio\": \"3.73\",\r\n    \"fechaHora\" : \"2024-05-01T15:30:00.123456789\",\r\n    \"proveedor\" : \"proveedor\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/sp/tipocambio",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sp",
+										"tipocambio"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get TipoCambio",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/sp/tipocambio/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sp",
+										"tipocambio",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get moneda",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/sp/tipocambio/moneda/USD",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sp",
+										"tipocambio",
+										"moneda",
+										"USD"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAll TipoCambio",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/sp/tipocambio",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sp",
+										"tipocambio"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "actualizar TipoCambio",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"monedaBase\": \"PEN\",\r\n    \"monedaDestino\": \"USD\",\r\n    \"tasaCambio\": 0.27,\r\n    \"fechaHora\": \"2024-05-01T15:30:00.123457\",\r\n    \"proveedor\": \"proveedor\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/sp/tipocambio",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sp",
+										"tipocambio"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Solicitud",
+					"item": [
+						{
+							"name": "Solicitud",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"usuarioSolicitante\" : \"useridtest\",\r\n    \"monto\" : \"100\",\r\n    \"monedaOrigen\": \"PEN\",\r\n    \"monedaDestino\" : \"USD\",\r\n    \"montoCambiado\" : \"28.20\",\r\n    \"fechaProceso\" : \"2024-05-01T15:30:00.123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/sp/solicitud",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sp",
+										"solicitud"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "actualizar Solicitud",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"usuarioSolicitante\" : \"useridtest\",\r\n    \"monto\" : \"100\",\r\n    \"monedaOrigen\": \"PEN\",\r\n    \"monedaDestino\" : \"USD\",\r\n    \"montoCambiado\" : \"21.20\",\r\n    \"fechaProceso\" : \"2024-05-01T15:30:00.123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/sp/solicitud",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sp",
+										"solicitud"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Solicitud",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/sp/solicitud/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sp",
+										"solicitud",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get ALL Solicitud",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/sp/solicitud",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sp",
+										"solicitud"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auditoria",
+					"item": [
+						{
+							"name": "getAll Auditoria",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/sp/auditoria",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sp",
+										"auditoria"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

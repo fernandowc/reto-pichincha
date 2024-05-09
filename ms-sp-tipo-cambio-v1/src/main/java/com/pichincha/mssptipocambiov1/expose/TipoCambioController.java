@@ -1,8 +1,10 @@
 package com.pichincha.mssptipocambiov1.expose;
 
 import com.pichincha.mssptipocambiov1.expose.response.SolicitudResponse;
+import com.pichincha.mssptipocambiov1.model.Auditoria;
 import com.pichincha.mssptipocambiov1.model.Solicitud;
 import com.pichincha.mssptipocambiov1.model.TipoCambio;
+import com.pichincha.mssptipocambiov1.service.AuditoriaService;
 import com.pichincha.mssptipocambiov1.service.SolicitudService;
 import com.pichincha.mssptipocambiov1.service.TipoCambioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,9 @@ public class TipoCambioController {
     @Autowired
     private TipoCambioService tipoCambioService;
 
+    @Autowired
+    private AuditoriaService auditoriaService;
+
     @PostMapping("/solicitud")
     public Solicitud nuevaSolicitudCambio(@RequestBody Solicitud solicitud) {
 
@@ -37,6 +42,12 @@ public class TipoCambioController {
     public Solicitud actualizarSolicitudCambio(@RequestBody Solicitud solicitud) {
 
         return solicitudService.actualizarSolicitud(solicitud);
+    }
+
+    @GetMapping("/solicitud")
+    public List<Solicitud> listaSolicitudes() {
+
+        return solicitudService.verSolicitudes();
     }
 
     //tipoCambio
@@ -69,6 +80,14 @@ public class TipoCambioController {
     public TipoCambio obtenerTipoCambio(@PathVariable String monedaBase) {
 
         return tipoCambioService.buscarPorMoneda(monedaBase);
+    }
+
+    //Auditoria
+
+    @GetMapping("/auditoria")
+    public List<Auditoria> auditoria() {
+
+        return auditoriaService.listarAuditoria();
     }
 
 

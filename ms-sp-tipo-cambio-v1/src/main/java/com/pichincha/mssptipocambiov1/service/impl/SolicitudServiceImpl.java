@@ -9,6 +9,7 @@ import com.pichincha.mssptipocambiov1.service.SolicitudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -37,6 +38,11 @@ public class SolicitudServiceImpl implements SolicitudService {
     @Override
     public Solicitud actualizarSolicitud(Solicitud solicitud) {
         return solicitudRepository.save(solicitud);
+    }
+
+    @Override
+    public List<Solicitud> verSolicitudes() {
+        return (List<Solicitud>) solicitudRepository.findAll();
     }
 
     public Solicitud buildSolicitudResponse(Solicitud solicitud, TipoCambio tipoCambio) {
